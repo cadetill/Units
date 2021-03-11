@@ -2,7 +2,7 @@
   @abstract(Unit to manage content of a TWebBrowser)
   @author(Xavier Martinez (cadetill) <cadetill@gmail.com>)
   @created(March 10, 2021)
-  @lastmod(March 10, 2021)
+  @lastmod(March 11, 2021)
 
   The uWBControl unit contains the definition and implementation of the classes needed to manage a HTML loaded into a TWebBrowser.@br
   You can get information about forms, images and links. You can read and set values of different elements from a Form. You can submit a form
@@ -10,7 +10,8 @@
 
   @bold(Change List) @br
   @unorderedList(
-    @item(10/03/2021 : first version)
+    @item(03/10/2021 : first version)
+    @item(03/11/2021 : Added the public functions SetFieldValue, GetFieldValue and SubmitForm into TWBControl class)
   )
 }
 unit uWBControl;
