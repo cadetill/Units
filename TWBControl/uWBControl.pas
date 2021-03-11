@@ -204,6 +204,12 @@ type
     procedure Clear;
     // Returns the position of a frameset in the list. If not exists returns -1
     function IndexOf(FrmName: string): Integer;
+    // Returns True if Field is found into the specified Form and Frameset. Otherwise returns False
+    function SetFieldValue(Frameset, Form, Field, Value: string): Boolean;
+    // Returns Field value if Field is found into the specified Form and Frameset. Otherwise returns an empty string
+    function GetFieldValue(Frameset, Form, Field: string): string;
+    // Returns True (and submit it) if Form is found into the specified Frameset. Otherwise returns False
+    function SubmitForm(Frameset, Form: string): Boolean;
 
     // Gets info about all framesets of the loaded page. If no framesets, creates one empty @link(TFrameset) object an get info about page
     procedure GetFramesets;
@@ -265,6 +271,37 @@ begin
   GetFrameset.Free;
 
   inherited;
+end;
+
+function TWBControl.GetFieldValue(Frameset, Form, Field: string): string;
+var
+  i: Integer;
+  j: Integer;
+  k: Integer;
+begin
+  Result := '';
+  for i := 0 to FFrameset.Count - 1 do
+  begin
+    if SameText(Frameset, FFrameset[i].Name) then
+    begin
+      for j := 0 to FFrameset[i].FForms.Count - 1 do
+      begin
+        if SameText(Form, FFrameset[i].FForms[j].Name) then
+        begin
+          for k := 0 to FFrameset[i].FForms[j].FFields.Count - 1 do
+          begin
+            if SameText(Field, FFrameset[i].FForms[j].FFields[k].Name) then
+            begin
+              Result := FFrameset[i].FForms[j].FFields[k].Value;
+              Break;
+            end;
+          end;
+          Break;
+        end;
+      end;
+      Break;
+    end;
+  end;
 end;
 
 function TWBControl.GetFrameset: TObjectList<TFrameset>;
@@ -344,11 +381,68 @@ begin
   Print(OLECMDID_PRINT, OLECMDEXECOPT_DONTPROMPTUSER);
 end;
 
+function TWBControl.SetFieldValue(Frameset, Form, Field,
+  Value: string): Boolean;
+var
+  i: Integer;
+  j: Integer;
+  k: Integer;
+begin
+  Result := False;
+  for i := 0 to FFrameset.Count - 1 do
+  begin
+    if SameText(Frameset, FFrameset[i].Name) then
+    begin
+      for j := 0 to FFrameset[i].FForms.Count - 1 do
+      begin
+        if SameText(Form, FFrameset[i].FForms[j].Name) then
+        begin
+          for k := 0 to FFrameset[i].FForms[j].FFields.Count - 1 do
+          begin
+            if SameText(Field, FFrameset[i].FForms[j].FFields[k].Name) then
+            begin
+              FFrameset[i].FForms[j].FFields[k].Value := Value;
+              Result := True;
+              Break;
+            end;
+          end;
+          Break;
+        end;
+      end;
+      Break;
+    end;
+  end;
+end;
+
 procedure TWBControl.SetWebBrowser(WB: TWebBrowser);
 begin
   Clear;
   FWebBrowser := WB;
   GetFramesets;
+end;
+
+function TWBControl.SubmitForm(Frameset, Form: string): Boolean;
+var
+  i: Integer;
+  j: Integer;
+begin
+  Result := False;
+  for i := 0 to FFrameset.Count - 1 do
+  begin
+    if SameText(Frameset, FFrameset[i].Name) then
+    begin
+      for j := 0 to FFrameset[i].FForms.Count - 1 do
+      begin
+        if SameText(Form, FFrameset[i].FForms[j].Name) then
+        begin
+          FFrameset[i].FForms[j].Submit;
+          Result := True;
+          Break;
+        end;
+      end;
+      Break;
+    end;
+  end;
 end;
 
 { TFrameset }
