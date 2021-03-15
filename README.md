@@ -11,3 +11,7 @@ You can get information about forms, images and links. You can read and set valu
 That unit work with HTML pages with or without Framesets. In case no exists frameset, this unit create one without name.
 Only valid for Windows. If someone wants to transform the unit to multiplatform, I will appreciate it xD
 
+|Platform|Framework       |
+|--------|----------------|
+|Win32   |VCL             |
+|Win64   |VCL             |
