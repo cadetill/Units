@@ -20,7 +20,7 @@ interface
 
 uses
   SHDocVw, MSHTML,
-  System.Generics.Collections ;
+  System.Generics.Collections;
 
 type
   {
