@@ -51,32 +51,52 @@ type
   }
   TDualList = class
   private
+    // List of all @link(TDualValue) objects
     FValues: TObjectList<TDualValue>;
 
+    // Returns the FValues object list. It is created if it is not created
     function GetValues: TObjectList<TDualValue>;
   public
+    // Destructor of the class. Destroy all created objects
     destructor Destroy; override;
 
-    function Add(FieldName, DataType: string): Integer;
+    // Adds a @link(TDualValue).
+    function Add(Key, Value: string): Integer;
 
+    // List of all values.
     property Values: TObjectList<TDualValue> read GetValues;
   end;
 
+  {
+    @abstract(Base class to get information from a Firebird DataBase.)
+    You must inherit from this class to create a new class with a database connection component (like as FireDAC, ADO, ...) and implements his abstract (or virtual) methods.
+  }
   TFBMetaData = class
   private
+    // Database connection component
     FDataBase: TCustomConnection;
+    // Query component
     FQuery: TDataSet;
   protected
+    // Sets a Query component. The component must be a query component. You must override to set the correct properties of this component
     procedure SetQuery(const Value: TDataSet); virtual;
 
+    // Executes a statement that returns one single field and returns his values into a TStringList
     function SimpleIterator(SQL: string): TStrings;
+    // Executes a statement that returns two fields and returns his values into a @link(TDualList)
     function DualIterator(SQL: string): TDualList;
+    // Starts a new transaction.@br You must override this method.
     procedure StartTransaction; virtual; abstract;
+    // Ends the current transaction.@br You must override this method.
     procedure EndTransaction; virtual; abstract;
+    // Assigns a sentence SQL to the Query component.@br You must overrides this method.
     function AssignSQL(SQL: string): Boolean; virtual; abstract;
+    // Executes a SQL sentence.@br You must override this method.
     function ExecSQL(SQL: string): Boolean; virtual;
 
+    // Query component
     property Query: TDataSet read FQuery write SetQuery;
+    // Databse component
     property DataBase: TCustomConnection read FDataBase write FDataBase;
   public
     constructor Create(DataBase: TCustomConnection); virtual;
@@ -542,11 +562,11 @@ end;
 
 { TDualList }
 
-function TDualList.Add(FieldName, DataType: string): Integer;
+function TDualList.Add(Key, Value: string): Integer;
 begin
   Result := GetValues.Add(TDualValue.Create);
-  FValues[Result].Key := FieldName;
-  FValues[Result].Value := DataType;
+  FValues[Result].Key := Key;
+  FValues[Result].Value := Value;
 end;
 
 destructor TDualList.Destroy;

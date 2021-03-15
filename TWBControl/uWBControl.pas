@@ -91,7 +91,7 @@ type
   private
     // The Form
     FForm: IHTMLFormElement;
-    // List of all @link(TField)
+    // List of all @link(TField) objects
     FFields: TObjectList<TField>;
 
     // Returns the FFields object list. It is created if it is not created
