@@ -3,7 +3,7 @@ program WBControlDemo;
 uses
   Vcl.Forms,
   UMainFrm in 'UMainFrm.pas' {MainFrm},
-  uWBControl in 'uWBControl.pas';
+  uWBControl in '..\uWBControl.pas';
 
 {$R *.res}
 
