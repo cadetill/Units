@@ -11,7 +11,19 @@ You can get information about forms, images and links. You can read and set valu
 That unit work with HTML pages with or without Framesets. In case no exists frameset, this unit create one without name.
 Only valid for Windows. If someone wants to transform the unit to multiplatform, I will appreciate it xD
 
-|Platform|Framework       |
-|--------|----------------|
-|Win32   |VCL             |
-|Win64   |VCL             |
+|Framework |Platform  |
+|----------|----------|
+|VCL       |All       |
+
+
+### TFBMetaData
+
+Contains the uFBMetaData and uFBMDFireDAC units.
+First unit, uFBMetaData, contains the base class TFBMetaData to get information from a Firebird DataBase. You can inherited from this class to establish a database connection to get the information.
+Second unit, uFBMDFireDAC, contains the TFBMDFireDAC class that inherited from TFBMetaData to establish a FireDAC connection to get the information.
+
+|Framework |Platform  |
+|----------|----------|
+|VCL       |All(*)    |
+|FMX       |All(*)    |
+(*) if the components connection have access to this framework/platform

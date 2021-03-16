@@ -1,15 +1,15 @@
 {
   @abstract(Unit get information from Firebird database)
   @author(Xavier Martinez (cadetill) <cadetill@gmail.com>)
-  @created(March 13, 2021)
-  @lastmod(March 13, 2021)
+  @created(March 16, 2021)
+  @lastmod(March 16, 2021)
 
   The uFBMetaData unit contains the definition and implementation of the classes needed to get information about a Firebird database.@br
   This unit contains TFBMetaData class that have some abstract methods that you need to implements in descendants classes with a specified connection components
 
   @bold(Change List) @br
   @unorderedList(
-    @item(03/13/2021 : first version)
+    @item(03/16/2021 : first version)
   )
 }
 unit uFBMetaData;
@@ -40,9 +40,9 @@ type
     // Returns the formatted Key + Value
     function FormattedData: string;
 
-    // the key or principal value
+    // The key or principal value
     property Key: string read FKey write FKey;
-    // the value of the key or extended info
+    // The value of the key or extended info
     property Value: string read FValue write FValue;
   end;
 
@@ -99,31 +99,55 @@ type
     // Databse component
     property DataBase: TCustomConnection read FDataBase write FDataBase;
   public
+    // Constructor of the class.@br You can reintroduce them if you want to specify a DataBase connection component.
     constructor Create(DataBase: TCustomConnection); virtual;
+    // Destructor of the class. Destroy all created objects
     destructor Destroy; override;
 
+    // Returns all table names
     function GetTables: TStrings;
+    // Returns all fields name from a specific TableName
     function GetTableFields(TableName: string): TStrings;
+    // Returns all fields name and fields type from a specific TableName
     function GetTableFieldsAndTypes(TableName: string): TDualList;
+    // Returns all fields name from the primary key
     function GetPrimaryKeyFields(TableName: string): TStrings;
+    // Returns all fields name and fields types from the primary key
     function GetPrimaryKeyFieldsAndTypes(TableName: string): TDualList;
+    // Returns all views names
     function GetViews: TStrings;
+    // Returns the source code of a specific ViewName
     function GetViewSource(ViewName: string): TStrings;
+    // Returns all dependents objects and his type
     function GetDependOnObject(ObjectName: string): TDualList;
+    // Returns all the objects it depends on and his type
     function GetObjectDependsOn(ObjectName: string): TDualList;
+    // Returns all exceptions and its message
     function GetExceptions: TDualList;
+    // Returns dimension from a field array from the specified TableName and FieldName
     function GetFieldArrayDimension(TableName, FieldName: string): TDualList;
+    // Returns the UDF name installed
     function GetUDF: TStrings;
+    // Returns generators name
     function GetGenerators: TStrings;
+    // Returns index name from a specific TableName
     function GetIndex(TableName: string; OnlyActive: Boolean = False; Unique: Boolean = False): TStrings;
+    // Returns the fields names from the specified IndexName
     function GetIndexFields(IndexName: string): TStrings;
+    // Returns all procedure names
     function GetProcedures: TStrings;
+    // Returns the source code of the specified ProcName
     function GetProcedureSource(ProcName: string): TStrings;
+    // Returns all input parameters from the specified ProcName
     function GetProcedureInParam(ProcName: string): TStrings;
+    // Returns all output parameters from the specified ProcName
     function GetProcedureOutParam(ProcName: string): TStrings;
-    function GetRoles(NoSystemRoles: Boolean = True): TStrings;
+    // Returns all triggers name
     function GetTriggers(TableName: string; TriggerType: TTriggerType): TStrings;
+    // Returns the cource code from the specified TriggerName
     function GetTriggerSource(TriggerName: string): TStrings;
+    // Returns all defined roles
+    function GetRoles(NoSystemRoles: Boolean = True): TStrings;
   end;
 
 implementation

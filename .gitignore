@@ -69,6 +69,7 @@ __recovery/
 modules/
 
 # PasDoc files
+intro.text
 Help/
 *.pds
 *.lnk
