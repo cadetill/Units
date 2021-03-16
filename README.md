@@ -26,4 +26,5 @@ Second unit, uFBMDFireDAC, contains the TFBMDFireDAC class that inherited from T
 |----------|----------|
 |VCL       |All(*)    |
 |FMX       |All(*)    |
+
 (*) if the components connection have access to this framework/platform
