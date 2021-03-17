@@ -69,6 +69,8 @@ type
 
     // Returns the name of the field
     function GetName: string;
+    // Returns the id of the field
+    function GetId: string;
     // Returns the value of the field
     function GetValue: string;
     // Sets a new value into the field
@@ -77,6 +79,8 @@ type
     // Constructor of the class.
     constructor Create(Fld: IHTMLElement);
 
+    // Id of the field.
+    property Id: string read GetId;
     // Name of the field.
     property Name: string read GetName;
     // Value of the field.
@@ -91,13 +95,15 @@ type
   private
     // The Form
     FForm: IHTMLFormElement;
-    // List of all @link(TField) objects
+    // List of all @link(TField)
     FFields: TObjectList<TField>;
 
     // Returns the FFields object list. It is created if it is not created
     function GetField: TObjectList<TField>;
     // Returns the name of form
     function GetName: string;
+    // Returns the id of form
+    function GetId: string;
   public
     // Constructor of the class.
     constructor Create(Form: IHTMLFormElement); virtual;
@@ -113,6 +119,8 @@ type
 
     // Name of the form.
     property Name: string read GetName;
+    // Id of the form.
+    property Id: string read GetId;
     // List of all fields.
     property Fields: TObjectList<TField> read GetField;
   end;
@@ -206,9 +214,9 @@ type
     // Returns the position of a frameset in the list. If not exists returns -1
     function IndexOf(FrmName: string): Integer;
     // Returns True if Field is found into the specified Form and Frameset. Otherwise returns False
-    function SetFieldValue(Frameset, Form, Field, Value: string): Boolean;
+    function SetFieldValue(Frameset, FormName, FormId, FieldName, FieldId, Value: string): Boolean;
     // Returns Field value if Field is found into the specified Form and Frameset. Otherwise returns an empty string
-    function GetFieldValue(Frameset, Form, Field: string): string;
+    function GetFieldValueByName(Frameset, FormName, FormId, FieldName, FieldId: string): string;
     // Returns True (and submit it) if Form is found into the specified Frameset. Otherwise returns False
     function SubmitForm(Frameset, Form: string): Boolean;
 
@@ -274,7 +282,8 @@ begin
   inherited;
 end;
 
-function TWBControl.GetFieldValue(Frameset, Form, Field: string): string;
+function TWBControl.GetFieldValueByName(Frameset, FormName, FormId, FieldName,
+  FieldId: string): string;
 var
   i: Integer;
   j: Integer;
@@ -287,11 +296,11 @@ begin
     begin
       for j := 0 to FFrameset[i].FForms.Count - 1 do
       begin
-        if SameText(Form, FFrameset[i].FForms[j].Name) then
+        if SameText(FormName, FFrameset[i].FForms[j].Name) or SameText(FormId, FFrameset[i].FForms[j].id) then
         begin
           for k := 0 to FFrameset[i].FForms[j].FFields.Count - 1 do
           begin
-            if SameText(Field, FFrameset[i].FForms[j].FFields[k].Name) then
+            if SameText(FieldName, FFrameset[i].FForms[j].FFields[k].Name) or SameText(FieldId, FFrameset[i].FForms[j].FFields[k].Id) then
             begin
               Result := FFrameset[i].FForms[j].FFields[k].Value;
               Break;
@@ -382,7 +391,7 @@ begin
   Print(OLECMDID_PRINT, OLECMDEXECOPT_DONTPROMPTUSER);
 end;
 
-function TWBControl.SetFieldValue(Frameset, Form, Field,
+function TWBControl.SetFieldValue(Frameset, FormName, FormId, FieldName, FieldId,
   Value: string): Boolean;
 var
   i: Integer;
@@ -396,11 +405,15 @@ begin
     begin
       for j := 0 to FFrameset[i].FForms.Count - 1 do
       begin
-        if SameText(Form, FFrameset[i].FForms[j].Name) then
+        if ((FormName <> '') and SameText(FormName, FFrameset[i].FForms[j].Name)) or
+           ((FormId <> '') and SameText(FormId, FFrameset[i].FForms[j].Id))
+        then
         begin
           for k := 0 to FFrameset[i].FForms[j].FFields.Count - 1 do
           begin
-            if SameText(Field, FFrameset[i].FForms[j].FFields[k].Name) then
+            if ((FieldName <> '') and SameText(FieldName, FFrameset[i].FForms[j].FFields[k].Name)) or
+               ((FieldId <> '') and SameText(FieldId, FFrameset[i].FForms[j].FFields[k].Id))
+            then
             begin
               FFrameset[i].FForms[j].FFields[k].Value := Value;
               Result := True;
@@ -659,6 +672,11 @@ begin
   end;
 end;
 
+function TForms.GetId: string;
+begin
+  Result := IHTMLElement(FForm).id;
+end;
+
 function TForms.GetName: string;
 begin
   Result := FForm.name;
@@ -688,6 +706,15 @@ end;
 constructor TField.Create(Fld: IHTMLElement);
 begin
   FField := Fld;
+end;
+
+function TField.GetId: string;
+begin
+  Result := '';
+  if not Assigned(FField) then
+    Exit;
+
+  Result := FField.id;
 end;
 
 function TField.GetName: string;

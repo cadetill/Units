@@ -1,30 +1,25 @@
 ﻿[Closed Files]
-File_0=TSourceModule,'D:\Documents\Embarcadero\Studio\Projects\twebbrowser\Unit4.pas',0,1,66,1,108,0,0,,
-File_1=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\rtl\common\System.Win.Registry.pas',0,1,1,25,10,0,0,,
-File_2=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\UNavegadorI.pas',0,1,270,20,278,0,0,,
-File_3=TSourceModule,'D:\Documents\GitHub\CdA\La Pinya\src\Classes\uMembers.pas',0,1,1,1,14,0,0,,
-File_4=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\WebControl.pas',0,1,191,6,200,0,0,,{1
-File_5=TSourceModule,'D:\Documents\Embarcadero\Studio\Projects\twebbrowser\uWBControl.pas',0,1,1,52,2,0,0,,
-File_6=TSourceModule,'D:\Documents\GitHub\CdA\La Pinya\src\Classes\uRoles.pas',0,1,1,1,1,0,0,,
-File_7=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,23115,1,23139,0,0,,
-File_8=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\Classes\uCustomerInfo.pas',0,1,1426,1,1429,0,0,,
-File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\Internet\SHDocVw.pas',0,1,549,64,573,0,0,,
-File_10=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\Internet\MSHTML.pas',0,1,1,6,9,0,0,,
-File_11=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\rtl\win\Winapi.ActiveX.pas',0,1,1676,1,1700,0,0,,
-File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\SOURCE\VCL\Vcl.OleCtrls.pas',0,1,1766,1,1790,0,0,,
-File_13=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\_deleted\UNavegadorC.pas',0,1,1,1,1,0,0,,
-File_14=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\Classes\uCAndC.pas',0,1,1,42,6,0,0,,
+File_0=TSourceModule,'D:\Documents\GitHub\Units\TWBControl\uWBControl.pas',0,1,1,1,1,0,0,,
+File_1=TSourceModule,'D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\uWBControl.pas',0,1,25,19,30,0,0,,
+File_2=TSourceModule,'D:\Documents\Embarcadero\Studio\Projects\twebbrowser\Unit4.pas',0,1,66,1,108,0,0,,
+File_3=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\rtl\common\System.Win.Registry.pas',0,1,1,25,10,0,0,,
+File_4=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\UNavegadorI.pas',0,1,270,20,278,0,0,,
+File_5=TSourceModule,'D:\Documents\GitHub\CdA\La Pinya\src\Classes\uMembers.pas',0,1,1,1,14,0,0,,
+File_6=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\WebControl.pas',0,1,191,6,200,0,0,,{1
+File_7=TSourceModule,'D:\Documents\Embarcadero\Studio\Projects\twebbrowser\uWBControl.pas',0,1,1,52,2,0,0,,
+File_8=TSourceModule,'D:\Documents\GitHub\CdA\La Pinya\src\Classes\uRoles.pas',0,1,1,1,1,0,0,,
+File_9=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\SOURCE\RTL\SYS\System.SysUtils.pas',0,1,23115,1,23139,0,0,,
+File_10=TSourceModule,'D:\Documents\Fonts\botigues\_Delphi 6\TPV_XE\src\Classes\uCustomerInfo.pas',0,1,1426,1,1429,0,0,,
+File_11=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\Internet\SHDocVw.pas',0,1,549,64,573,0,0,,
+File_12=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\Internet\MSHTML.pas',0,1,1,6,9,0,0,,
+File_13=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\source\rtl\win\Winapi.ActiveX.pas',0,1,1676,1,1700,0,0,,
+File_14=TSourceModule,'c:\program files (x86)\embarcadero\studio\19.0\SOURCE\VCL\Vcl.OleCtrls.pas',0,1,1766,1,1790,0,0,,
 
 [Modules]
-Module0=D:\Documents\GitHub\Units\TWBControl\uWBControl.pas
-Module1=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\UMainFrm.pas
-Module2=default.htm
-Module3=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\uWBControl.pas
-Count=4
+Module0=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\UMainFrm.pas
+Module1=default.htm
+Count=2
 EditWindowCount=1
-
-[D:\Documents\GitHub\Units\TWBControl\uWBControl.pas]
-ModuleType=TSourceModule
 
 [D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\UMainFrm.pas]
 ModuleType=TSourceModule
@@ -32,16 +27,11 @@ ModuleType=TSourceModule
 [default.htm]
 ModuleType=TURLModule
 
-[D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\uWBControl.pas]
-ModuleType=TSourceModule
-
 [EditWindow0]
-ViewCount=4
-CurrentEditView=D:\Documents\GitHub\Units\TWBControl\uWBControl.pas
+ViewCount=2
+CurrentEditView=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\UMainFrm.pas
 View0=0
 View1=1
-View2=2
-View3=3
 PercentageSizes=1
 Create=1
 Visible=1
@@ -80,33 +70,11 @@ CustomEditViewType=TEditView
 Module=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\UMainFrm.pas
 CursorX=1
 CursorY=140
-TopLine=111
+TopLine=130
 LeftCol=1
 Elisions=
 Bookmarks=
 EditViewName=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\UMainFrm.pas
-
-[View2]
-CustomEditViewType=TEditView
-Module=D:\Documents\GitHub\Units\TWBControl\uWBControl.pas
-CursorX=1
-CursorY=1
-TopLine=1
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=D:\Documents\GitHub\Units\TWBControl\uWBControl.pas
-
-[View3]
-CustomEditViewType=TEditView
-Module=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\uWBControl.pas
-CursorX=19
-CursorY=30
-TopLine=25
-LeftCol=1
-Elisions=
-Bookmarks=
-EditViewName=D:\Documents\Embarcadero\Studio\Projects\TWBControl\Demo\uWBControl.pas
 
 [UndockedDesigner]
 Count=0
@@ -204,8 +172,8 @@ Create=1
 Visible=0
 Docked=1
 State=0
-Left=1
-Top=871
+Left=0
+Top=1040
 Width=2771
 Height=1413
 MaxLeft=-1
@@ -293,6 +261,11 @@ LRDockWidth=1896
 Dockable=1
 StayOnTop=0
 SplitPos=111
+
+[PropInspDesignerSelection]
+ArrangeBy=Name
+SelectedItem=Action,OnClick
+ExpandedItems=Anchors=0,Corners=0,Fill=1,LiveBindings=0,"LiveBindings Designer=0",Margins=0,Padding=0,Position=0,RotationCenter=0,Scale=0,Sides=0,Size=0,Stroke=1,Touch=0,Stroke.Bitmap=0,Stroke.Resource=0,Fill.Bitmap=0,Fill.Resource=0,BorderIcons=0,Constraints=0,StyledSettings=0,TextSettings=0,TouchTargetExpansion=0,ActiveControl=0,Font=0,GlassFrame=0,HorzScrollBar=0,VertScrollBar=0
 
 [ClassBrowserTool]
 PercentageSizes=1
