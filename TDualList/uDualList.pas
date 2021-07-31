@@ -1,8 +1,8 @@
 {
   @abstract(Unit to manage a dual list with Key-Value)
   @author(Xavier Martinez (cadetill) <cadetill@gmail.com>)
-  @created(March 10, 2021)
-  @lastmod(March 11, 2021)
+  @created(July 31, 2021)
+  @lastmod(July 31, 2021)
 
   The uWBControl unit contains the definition and implementation of the classes needed to manage a HTML loaded into a TWebBrowser.@br
   You can get information about forms, images and links. You can read and set values of different elements from a Form. You can submit a form
