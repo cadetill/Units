@@ -3,6 +3,7 @@ Units with classes, records, interfaces, ... with specific information in each o
 
 All code comments into the units are formatted for [PasDoc](https://github.com/pasdoc/pasdoc)
 
+
 ### TWBControl
 
 Contains the uWBControl unit. 
@@ -28,3 +29,14 @@ Second unit, uFBMDFireDAC, contains the TFBMDFireDAC class that inherited from T
 |FMX       |All(*)    |
 
 (*) if the components connection have access to this framework/platform
+
+
+### TDualList
+
+Contains the uDualList unit. 
+The uDualList unit contains the definition and implementation of the classes needed to manage a dual list with a pair of key-value.
+
+|Framework |Platform  |
+|----------|----------|
+|VCL       |All       |
+|FMX       |All       |
