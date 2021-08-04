@@ -173,7 +173,7 @@ function TDualList.KeyExists(Key: string): Integer;
 var
   i: Integer;
 begin
-  Result := '';
+  Result := -1;
   for i := 0 to GetCount - 1 do
     if SameText(Key, FItems[i].Key) then
     begin
