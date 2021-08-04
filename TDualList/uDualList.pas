@@ -64,8 +64,10 @@ type
     function Insert(Index: Integer): TDualListItem;
     // Finds a @link(TDualListItem) into the list by a Key value and returns his Value.
     function Find(Key: string): string;
+    // Finds a @link(TDualListItem) into the list by a Key value and returns true if exists or false if not.
+    function KeyExists(Key: string): Boolean;
     // Finds a @link(TDualListItem) into the list by a Key value and returns his position.
-    function KeyExists(Key: string): Integer;
+    function IndexOf(Key: string): Integer;
     // Deletes a @link(TDualListItem) from the list by a Index.
     procedure Delete(Index: Integer);
     // Deletes all @link(TDualListItem) from the list.
@@ -145,12 +147,9 @@ var
   i: Integer;
 begin
   Result := '';
-  for i := 0 to GetCount - 1 do
-    if SameText(Key, FItems[i].Key) then
-    begin
-      Result := FItems[i].Value;
-      Break;
-    end;
+  i := IndexOf(Key);
+  if i <> -1 then
+    Result := FItems[i].Value;
 end;
 
 function TDualList.GetCount: Integer;
@@ -163,13 +162,7 @@ begin
   Result := FItems[Index];
 end;
 
-function TDualList.Insert(Index: Integer): TDualListItem;
-begin
-  Result := TDualListItem.Create;
-  FItems.Insert(Index, Result);
-end;
-
-function TDualList.KeyExists(Key: string): Integer;
+function TDualList.IndexOf(Key: string): Integer;
 var
   i: Integer;
 begin
@@ -180,6 +173,17 @@ begin
       Result := i;
       Break;
     end;
+end;
+
+function TDualList.Insert(Index: Integer): TDualListItem;
+begin
+  Result := TDualListItem.Create;
+  FItems.Insert(Index, Result);
+end;
+
+function TDualList.KeyExists(Key: string): Boolean;
+begin
+  Result := IndexOf(Key) <> -1;
 end;
 
 procedure TDualList.SetItem(Index: Integer; const Value: TDualListItem);
