@@ -113,6 +113,10 @@ object MainFrm: TMainFrm
         object TabSheet5: TTabSheet
           Caption = 'Primary Key'
           ImageIndex = 1
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             601
             264)
@@ -136,6 +140,10 @@ object MainFrm: TMainFrm
         object TabSheet6: TTabSheet
           Caption = 'Index'
           ImageIndex = 2
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             601
             264)
@@ -177,6 +185,10 @@ object MainFrm: TMainFrm
         object TabSheet7: TTabSheet
           Caption = 'Triggers'
           ImageIndex = 3
+          ExplicitLeft = 0
+          ExplicitTop = 0
+          ExplicitWidth = 0
+          ExplicitHeight = 0
           DesignSize = (
             601
             264)
@@ -213,6 +225,10 @@ object MainFrm: TMainFrm
     object TabSheet2: TTabSheet
       Caption = 'Views'
       ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         813
         326)
@@ -248,6 +264,10 @@ object MainFrm: TMainFrm
     object TabSheet3: TTabSheet
       Caption = 'Procedures'
       ImageIndex = 2
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
       DesignSize = (
         813
         326)
