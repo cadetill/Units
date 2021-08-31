@@ -2,13 +2,14 @@ program ServicesDemo;
 
 uses
   Vcl.Forms,
-  UMainFrm in 'UMainFrm.pas' {Form4};
+  UMainFrm in 'UMainFrm.pas' {MainFrm},
+  uServices in '..\uServices.pas';
 
 {$R *.res}
 
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm4, Form4);
+  Application.CreateForm(TMainFrm, MainFrm);
   Application.Run;
 end.

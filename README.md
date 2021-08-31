@@ -40,3 +40,13 @@ The uDualList unit contains the definition and implementation of the classes nee
 |----------|----------|
 |VCL       |All       |
 |FMX       |All       |
+
+
+### TServices
+
+Contains the uServices unit. 
+The uServices unit contains the definition and implementation of the classes needed to manage Windows Services.
+
+|Framework |Platform  |
+|----------|----------|
+|VCL       |All       |
