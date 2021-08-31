@@ -122,7 +122,7 @@ type
     //        )
     // @param(SrvList string The list of Windows Services. Each item from this list has an @link(TSrvStatus) object with information about this Windows Service.)
     // @return(Boolean True if the operation success. Otherwise False.)
-    class function ServiceGetList(Machine: string; SrvType, SrvState: DWord; SrvList: TStringList): Boolean;
+    class function ServiceGetList(Machine: string; SrvType, SrvState: DWord; SrvList: TStrings): Boolean;
   end;
 
 implementation
@@ -188,7 +188,7 @@ begin
 end;
 
 class function TServices.ServiceGetList(Machine: string; SrvType,
-  SrvState: DWord; SrvList: TStringList): Boolean;
+  SrvState: DWord; SrvList: TStrings): Boolean;
 const
   cnMaxServices = 4096; // assume that the total number of services is less than 4096. Increase if necessary
 type
