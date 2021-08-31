@@ -86,6 +86,7 @@ object MainFrm: TMainFrm
         Width = 609
         Height = 292
         ActivePage = TabSheet4
+        Anchors = [akLeft, akTop, akRight, akBottom]
         TabOrder = 2
         object TabSheet4: TTabSheet
           Caption = 'Fields'
@@ -198,7 +199,7 @@ object MainFrm: TMainFrm
             OnClick = lbTriggersClick
           end
           object mTriggerSource: TMemo
-            Left = 160
+            Left = 158
             Top = 37
             Width = 425
             Height = 216

@@ -267,7 +267,7 @@ const
   SQL =
     'select i.rdb$index_name ' +
     'from rdb$indices i ' +
-    'where i.rdb$system_flag = 0 and i.rdb$relation_name = ''%s'' %s ' +
+    'where (i.rdb$system_flag is null or i.rdb$system_flag = 0) and i.rdb$relation_name = ''%s'' %s ' +
     'order by i.rdb$index_name';
   OnlyAc = ' and (i.rdb$index_inactive is null or i.rdb$index_inactive <> 0) ';
   OnlyUni = ' and i.rdb$unique_flag = 1 ';

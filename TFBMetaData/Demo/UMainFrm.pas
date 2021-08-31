@@ -217,6 +217,12 @@ begin
 
     lbPrimary.Items.Assign(FB.GetPrimaryKeyFields(lbTables.Items[lbTables.ItemIndex]));
     lbIndex.Items.Assign(FB.GetIndex(lbTables.Items[lbTables.ItemIndex]));
+    lbFieldsIndex.Clear;
+    if lbIndex.Count > 0 then
+    begin
+      lbIndex.ItemIndex := 0;
+      lbIndexClick(nil);
+    end;
     lbTriggers.Items.Assign(FB.GetTriggers(lbTables.Items[lbTables.ItemIndex], ttAll));
   finally
     DL.Free;
